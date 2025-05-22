@@ -1,0 +1,814 @@
+/* TempLanding.module.css - 1990s Retro Style */
+
+/* Global 90s styling */
+.tempLanding {
+  font-family: 'Times New Roman', serif;
+  background: #c0c0c0;
+  background-image:
+    radial-gradient(circle at 20% 30%, #ff00ff 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, #00ffff 0%, transparent 50%),
+    linear-gradient(45deg, #ffff00 0%, #ff00ff 25%, #00ffff 50%, #ffff00 75%, #ff00ff 100%);
+  background-size: 200px 200px, 150px 150px, 100% 100%;
+  animation: backgroundShift 10s ease-in-out infinite;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes backgroundShift {
+
+  0%,
+  100% {
+    background-position: 0% 0%, 100% 100%, center;
+  }
+
+  50% {
+    background-position: 100% 100%, 0% 0%, center;
+  }
+}
+
+/* Classic 90s banner with blinking text */
+.countdownBanner {
+  background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+  border: 4px outset #c0c0c0;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: bold;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.countdownContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 18px;
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.countdown {
+  display: flex;
+  gap: 15px;
+}
+
+.countdownItem {
+  background: #000080;
+  border: 2px inset #c0c0c0;
+  padding: 5px 10px;
+  border-radius: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.countdownNumber {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.countdownLabel {
+  display: block;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+/* Hero section with classic 90s styling */
+.hero {
+  background: #ffffff;
+  border: 4px inset #c0c0c0;
+  margin: 20px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "💄 ARE YOU READY TO GET PRETTY? 💄";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff00ff;
+  color: #ffffff;
+  padding: 5px 20px;
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: bold;
+  border: 2px solid #000000;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-family: 'Impact', sans-serif;
+  font-size: 48px;
+  color: #000080;
+  text-shadow: 3px 3px 0px #ffff00, 6px 6px 0px #ff00ff;
+  margin: 20px 0;
+  transform: perspective(500px) rotateX(15deg);
+  animation: titlePulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+
+  0%,
+  100% {
+    transform: perspective(500px) rotateX(15deg) scale(1);
+  }
+
+  50% {
+    transform: perspective(500px) rotateX(15deg) scale(1.05);
+  }
+}
+
+.highlight {
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+  background-size: 200% 200%;
+  animation: highlightShift 2s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+}
+
+@keyframes highlightShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.heroSubtitle {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #000000;
+  background: #ffff00;
+  padding: 15px;
+  border: 3px dashed #ff00ff;
+  margin: 20px 0;
+  animation: wiggle 4s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(1deg);
+  }
+
+  75% {
+    transform: rotate(-1deg);
+  }
+}
+
+/* 90s style stats */
+.signupStats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.statItem {
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  padding: 10px 20px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.statItem:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Classic 90s form styling */
+.signupForm {
+  background: #c0c0c0;
+  border: 4px inset #c0c0c0;
+  padding: 30px;
+  margin: 30px 0;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.nameInput,
+.emailInput {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  padding: 10px;
+  border: 2px inset #c0c0c0;
+  background: #ffffff;
+  width: 300px;
+  outline: none;
+}
+
+.nameInput:focus,
+.emailInput:focus {
+  border: 2px inset #0000ff;
+  background: #e0e0ff;
+}
+
+.signupButton {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff0000, #ffff00);
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000000;
+  border: 3px outset #ff0000;
+  padding: 15px 30px;
+  cursor: pointer;
+  animation: buttonPulse 2s ease-in-out infinite;
+  transition: all 0.2s;
+}
+
+.signupButton:hover {
+  background: linear-gradient(45deg, #ffff00, #ff0000);
+  transform: scale(1.1);
+}
+
+.signupButton:active {
+  border: 3px inset #ff0000;
+  transform: scale(0.95);
+}
+
+@keyframes buttonPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px #ff0000;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ffff00;
+  }
+}
+
+.signupButton.loading {
+  animation: none;
+  background: #808080;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.signupNote {
+  font-family: 'Comic Sans MS', cursive;
+  color: #000080;
+  font-weight: bold;
+  margin-top: 15px;
+  animation: colorCycle 3s linear infinite;
+}
+
+@keyframes colorCycle {
+  0% {
+    color: #000080;
+  }
+
+  33% {
+    color: #ff00ff;
+  }
+
+  66% {
+    color: #00ff00;
+  }
+
+  100% {
+    color: #000080;
+  }
+}
+
+/* Success message */
+.successMessage {
+  background: #00ff00;
+  border: 4px outset #00ff00;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  animation: celebration 2s ease-in-out infinite;
+}
+
+@keyframes celebration {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.05) rotate(1deg);
+  }
+
+  75% {
+    transform: scale(1.05) rotate(-1deg);
+  }
+}
+
+.successIcon {
+  font-size: 48px;
+  animation: spin 2s linear infinite;
+}
+
+.successMessage h3 {
+  color: #ff00ff;
+  font-size: 24px;
+  text-shadow: 2px 2px #000000;
+}
+
+.successMessage p {
+  color: #000080;
+  font-weight: bold;
+}
+
+/* Video preview with 90s styling */
+.heroVisual {
+  margin: 40px 0;
+}
+
+.videoPreview {
+  position: relative;
+  display: inline-block;
+}
+
+.videoFrame {
+  background: #000000;
+  border: 4px outset #c0c0c0;
+  padding: 10px;
+  position: relative;
+}
+
+.videoPlaceholder {
+  width: 320px;
+  height: 240px;
+  background: linear-gradient(45deg, #000080, #800080);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.videoPlaceholder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.playIcon {
+  color: #00ff00;
+  filter: drop-shadow(0 0 10px #00ff00);
+  animation: iconGlow 2s ease-in-out infinite;
+}
+
+@keyframes iconGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px #00ff00);
+  }
+
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px #00ff00);
+  }
+}
+
+.videoOverlay {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #ff00ff;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-family: 'Courier New', monospace;
+  border: 1px solid #ffffff;
+}
+
+.aiIndicator {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ffff00;
+  color: #000000;
+  padding: 5px 10px;
+  border: 2px solid #000000;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Features section */
+.features {
+  background: #ffffff;
+  border: 4px inset #c0c0c0;
+  margin: 20px;
+  padding: 30px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionHeader h2 {
+  font-family: 'Impact', sans-serif;
+  font-size: 36px;
+  color: #ff00ff;
+  text-shadow: 2px 2px #000000;
+  animation: titleShake 4s ease-in-out infinite;
+}
+
+@keyframes titleShake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-2px);
+  }
+
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+.sectionHeader p {
+  font-family: 'Arial', sans-serif;
+  color: #000080;
+  font-size: 16px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.featureCard {
+  background: #c0c0c0;
+  border: 4px outset #c0c0c0;
+  padding: 25px;
+  text-align: center;
+  animation: cardBob 4s ease-in-out infinite;
+}
+
+.featureCard:nth-child(2) {
+  animation-delay: 1.3s;
+}
+
+.featureCard:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+@keyframes cardBob {
+
+  0%,
+  100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotateZ(1deg);
+  }
+}
+
+.featureIcon {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 3px solid #000000;
+  animation: iconSpin 6s linear infinite;
+}
+
+@keyframes iconSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.featureCard h3 {
+  font-family: 'Comic Sans MS', cursive;
+  color: #000080;
+  font-size: 20px;
+  margin: 15px 0;
+  text-shadow: 1px 1px #ffff00;
+}
+
+.featureCard p {
+  font-family: 'Arial', sans-serif;
+  color: #000000;
+  line-height: 1.4;
+}
+
+/* Challenge section */
+.challenge {
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background-size: 400% 400%;
+  animation: challengeBackground 5s ease infinite;
+  border: 4px outset #ffffff;
+  margin: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+@keyframes challengeBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.challengeContent h2 {
+  font-family: 'Impact', sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  text-shadow: 3px 3px #000000;
+  animation: challengeTitle 3s ease-in-out infinite;
+}
+
+@keyframes challengeTitle {
+
+  0%,
+  100% {
+    transform: scale(1) skewX(0deg);
+  }
+
+  50% {
+    transform: scale(1.1) skewX(5deg);
+  }
+}
+
+.challengeContent p {
+  font-family: 'Arial', sans-serif;
+  color: #000000;
+  background: #ffffff;
+  padding: 15px;
+  border: 2px dashed #000000;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.challengeProgress {
+  margin: 30px auto;
+  max-width: 400px;
+}
+
+.progressBar {
+  background: #000000;
+  border: 2px inset #c0c0c0;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(45deg, #00ff00, #ffff00, #00ff00);
+  background-size: 40px 40px;
+  animation: progressMove 2s linear infinite;
+  transition: width 1s ease;
+}
+
+@keyframes progressMove {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.challengeProgress span {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  color: #ffffff;
+  background: #000000;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+}
+
+/* Utility classes for 90s grid system */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  margin: 40px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  /* Base card styles are handled by specific components */
+}
+
+/* Responsive adjustments for 90s feel */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .countdownContent {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .signupStats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .formFields input {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .videoPlaceholder {
+    width: 250px;
+    height: 188px;
+  }
+}
+
+/* Special 90s cursor effects */
+.signupButton:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="28" font-size="24">👆</text></svg>'), auto;
+}
+
+/* Under construction marquee effect */
+.tempLanding::after {
+  content: "💋 WE CAN ALL BE SUPER PRETTY ROCKSTARS, IT'S NOT A PROBLEM! 💋 WE CAN ALL BE SUPER PRETTY ROCKSTARS, IT'S NOT A PROBLEM! 💋";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  color: #00ff00;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 1000;
+  animation: marquee 25s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
@@ -11,6 +12,7 @@ import Footer from './components/layout/Footer';
 
 // Pages
 import Home from './pages/Home';
+import TempLanding from './pages/TempLanding';
 import Dashboard from './pages/Dashboard';
 import Create from './pages/Create';
 import Profile from './pages/Profile';
@@ -20,6 +22,9 @@ import AuthCallback from './components/auth/AuthCallback';
 // Styles
 import './App.module.css';
 import './styles/globals.css';
+
+// Environment flag to switch between temp landing and main app
+const SHOW_TEMP_LANDING = process.env.REACT_APP_TEMP_LANDING === 'true';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -43,7 +48,8 @@ const PublicRoute = ({ children }) => {
   return !user ? children : <Navigate to="/dashboard" replace />;
 };
 
-function AppContent() {
+// Main App Content (with auth context)
+function MainAppContent() {
   const { user } = useAuth();
 
   return (
@@ -98,18 +104,20 @@ function AppContent() {
         </Routes>
       </main>
       {user && <Footer />}
-      
-      {/* Toast notifications */}
-      <Toaster
-        position="top-right"
-        toastOptions={{
-          duration: 4000,
-          style: {
-            background: '#333',
-            color: '#fff',
-          },
-        }}
-      />
+    </div>
+  );
+}
+
+// Temp Landing Content (no auth context needed)
+function TempLandingContent() {
+  return (
+    <div className="app">
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<TempLanding />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
     </div>
   );
 }
@@ -117,11 +125,39 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <VideoProvider>
-          <AppContent />
-        </VideoProvider>
-      </AuthProvider>
+      {SHOW_TEMP_LANDING ? (
+        // For temp landing, no providers needed
+        <>
+          <TempLandingContent />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: '#333',
+                color: '#fff',
+              },
+            }}
+          />
+        </>
+      ) : (
+        // For main app, wrap with providers
+        <AuthProvider>
+          <VideoProvider>
+            <MainAppContent />
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                duration: 4000,
+                style: {
+                  background: '#333',
+                  color: '#fff',
+                },
+              }}
+            />
+          </VideoProvider>
+        </AuthProvider>
+      )}
     </Router>
   );
 }
