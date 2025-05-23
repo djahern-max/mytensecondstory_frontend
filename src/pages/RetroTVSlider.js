@@ -34,11 +34,11 @@ const RetroTVSlider = () => {
     };
 
     const getTransformText = () => {
-        if (sliderValue < 20) return "😔 Not So Hot";
-        if (sliderValue < 40) return "🤔 Getting There";
-        if (sliderValue < 60) return "😊 Looking Better";
+        if (sliderValue < 20) return "😔 Needs Enhancement";
+        if (sliderValue < 40) return "🤔 Getting Better";
+        if (sliderValue < 60) return "😊 Not Quite There Yet";
         if (sliderValue < 80) return "😎 Pretty Good";
-        return "🔥 ABSOLUTELY STUNNING!";
+        return "🔥 READY TO NETWORK!";
     };
 
     return (
@@ -52,7 +52,7 @@ const RetroTVSlider = () => {
             <div className={styles.tvContainer}>
                 {/* TV Brand Label */}
                 <div className={styles.tvBrand}>
-                    PRETTY-VISION™
+                    IMAGE ENHANCOR
                 </div>
 
                 {/* TV Screen */}
@@ -109,7 +109,7 @@ const RetroTVSlider = () => {
                 <div className={styles.controlPanel}>
                     {/* Slider Label */}
                     <div className={styles.sliderLabel}>
-                        ✨ PRETTINESS LEVEL: {sliderValue}% ✨
+                        ✨ MINGLE'OMETER: {sliderValue}% ✨
                     </div>
 
                     {/* Custom Slider */}

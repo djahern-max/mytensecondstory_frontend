@@ -195,6 +195,29 @@ const TempLanding = () => {
                 )}
               </motion.div>
 
+              {/* BIG RED ARROW - Only show when form is visible */}
+              {!isSubmitted && (
+                <motion.div
+                  className={styles.bigRedArrow}
+                  initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{ duration: 1.2, delay: 1.2, type: "spring", bounce: 0.6 }}
+                >
+                  <div className={styles.arrowWrapper}>
+                    <div className={styles.arrowMessage}>
+                      SIGN UP HERE! 🔥
+                    </div>
+                    <div className={styles.giantArrow}>
+                      <div className={styles.arrowShaft}></div>
+                      <div className={styles.arrowPoint}></div>
+                    </div>
+                    <div className={styles.urgencyText}>
+                      DON'T MISS OUT! ⚡
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Email Signup Form */}
               {!isSubmitted ? (
                 <motion.form

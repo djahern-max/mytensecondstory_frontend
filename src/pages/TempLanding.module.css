@@ -27,6 +27,8 @@
   }
 }
 
+
+
 /* Classic 90s banner with blinking text */
 .countdownBanner {
   background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
@@ -115,7 +117,7 @@
 }
 
 .hero::before {
-  content: "💄 ARE YOU READY TO GET PRETTY? 💄";
+  content: "💄 CREATE YOUR STORY AND NETWOR EFFECTIVELY! 💄";
   position: absolute;
   top: -20px;
   left: 50%;
@@ -725,7 +727,7 @@
 
 /* Under construction marquee effect */
 .tempLanding::after {
-  content: "💋 WE CAN ALL BE SUPER PRETTY ROCKSTARS, IT'S NOT A PROBLEM! 💋 WE CAN ALL BE SUPER PRETTY ROCKSTARS, IT'S NOT A PROBLEM! 💋";
+  content: "💋 STANDOUT AMONGST YOUR COLLEAGUES! 💋 DON'T GET LOST IN THE SHUFFLE! 💋";
   position: fixed;
   bottom: 0;
   left: 0;
@@ -749,5 +751,383 @@
 
   100% {
     transform: translateX(-100%);
+  }
+}
+
+/* BIG RED ARROW Styles - Add these to your TempLanding.module.css */
+
+.bigRedArrow {
+  position: relative;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 15;
+}
+
+.arrowWrapper {
+  position: relative;
+  text-align: center;
+  animation: megaBounce 2s ease-in-out infinite;
+}
+
+@keyframes megaBounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+
+  10% {
+    transform: translateY(-5px) scale(1.05) rotate(-2deg);
+  }
+
+  30% {
+    transform: translateY(-15px) scale(1.1) rotate(2deg);
+  }
+
+  40% {
+    transform: translateY(-20px) scale(1.15) rotate(-1deg);
+  }
+
+  60% {
+    transform: translateY(-10px) scale(1.08) rotate(1deg);
+  }
+}
+
+.arrowMessage {
+  font-family: 'Impact', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: #ff0000;
+  text-shadow:
+    3px 3px 0px #000000,
+    6px 6px 0px #ffffff,
+    9px 9px 0px #ffff00;
+  background: linear-gradient(45deg, #ff0000, #ff6600, #ffff00, #ff0000);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fireText 2s ease-in-out infinite;
+  margin-bottom: 20px;
+  transform: perspective(400px) rotateX(15deg);
+  letter-spacing: 2px;
+}
+
+@keyframes fireText {
+  0% {
+    background-position: 0% 50%;
+    transform: perspective(400px) rotateX(15deg) scale(1);
+  }
+
+  25% {
+    background-position: 100% 50%;
+    transform: perspective(400px) rotateX(15deg) scale(1.05);
+  }
+
+  50% {
+    background-position: 200% 50%;
+    transform: perspective(400px) rotateX(15deg) scale(1.1);
+  }
+
+  75% {
+    background-position: 300% 50%;
+    transform: perspective(400px) rotateX(15deg) scale(1.05);
+  }
+
+  100% {
+    background-position: 400% 50%;
+    transform: perspective(400px) rotateX(15deg) scale(1);
+  }
+}
+
+.giantArrow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.arrowShaft {
+  width: 20px;
+  height: 80px;
+  background: linear-gradient(180deg, #ff0000, #cc0000, #990000, #ff0000);
+  background-size: 100% 400%;
+  animation: arrowShaftPulse 1.5s ease-in-out infinite;
+  border: 4px solid #000000;
+  border-radius: 10px;
+  position: relative;
+  box-shadow:
+    0 0 20px #ff0000,
+    inset 0 0 10px #ffffff;
+}
+
+@keyframes arrowShaftPulse {
+  0% {
+    background-position: 0% 0%;
+    box-shadow: 0 0 20px #ff0000, inset 0 0 10px #ffffff;
+    transform: scaleY(1);
+  }
+
+  50% {
+    background-position: 0% 100%;
+    box-shadow: 0 0 40px #ff0000, 0 0 60px #ffff00, inset 0 0 20px #ffffff;
+    transform: scaleY(1.1);
+  }
+
+  100% {
+    background-position: 0% 200%;
+    box-shadow: 0 0 20px #ff0000, inset 0 0 10px #ffffff;
+    transform: scaleY(1);
+  }
+}
+
+.arrowPoint {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 60px solid #ff0000;
+  border: 4px solid #000000;
+  background: #ff0000;
+  position: relative;
+  margin-top: -4px;
+  animation: arrowPointThrob 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px #ff0000) drop-shadow(0 0 30px #ffff00);
+}
+
+@keyframes arrowPointThrob {
+
+  0%,
+  100% {
+    border-top-color: #ff0000;
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 15px #ff0000) drop-shadow(0 0 30px #ffff00);
+  }
+
+  25% {
+    border-top-color: #ff3300;
+    transform: scale(1.1) rotate(2deg);
+    filter: drop-shadow(0 0 25px #ff0000) drop-shadow(0 0 40px #ffff00);
+  }
+
+  50% {
+    border-top-color: #ff6600;
+    transform: scale(1.2) rotate(0deg);
+    filter: drop-shadow(0 0 35px #ff0000) drop-shadow(0 0 50px #ffff00);
+  }
+
+  75% {
+    border-top-color: #ff3300;
+    transform: scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 0 25px #ff0000) drop-shadow(0 0 40px #ffff00);
+  }
+}
+
+.urgencyText {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(45deg, #ff0000, #000000, #ff0000);
+  background-size: 200% 200%;
+  padding: 12px 24px;
+  border: 4px solid #ffff00;
+  border-radius: 0;
+  margin-top: 20px;
+  animation: urgencyFlash 2s ease-in-out infinite;
+  box-shadow:
+    0 0 20px #ff0000,
+    inset 0 0 10px #ff6600;
+  text-shadow: 2px 2px 4px #000000;
+  letter-spacing: 1px;
+}
+
+@keyframes urgencyFlash {
+  0% {
+    background-position: 0% 50%;
+    border-color: #ffff00;
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    background-position: 50% 50%;
+    border-color: #00ff00;
+    transform: scale(1.05) rotate(1deg);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    border-color: #00ffff;
+    transform: scale(1.1) rotate(0deg);
+  }
+
+  75% {
+    background-position: 150% 50%;
+    border-color: #ff00ff;
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  100% {
+    background-position: 200% 50%;
+    border-color: #ffff00;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Explosive attention-grabbing effects */
+.arrowWrapper::before {
+  content: "💥";
+  position: absolute;
+  top: -40px;
+  left: -50px;
+  font-size: 30px;
+  animation: explosion1 3s ease-in-out infinite;
+}
+
+.arrowWrapper::after {
+  content: "💥";
+  position: absolute;
+  top: -40px;
+  right: -50px;
+  font-size: 30px;
+  animation: explosion2 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes explosion1 {
+
+  0%,
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+
+  10%,
+  60% {
+    opacity: 1;
+    transform: scale(1.5) rotate(180deg);
+  }
+
+  35% {
+    opacity: 1;
+    transform: scale(2) rotate(360deg);
+  }
+}
+
+@keyframes explosion2 {
+
+  0%,
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+
+  10%,
+  60% {
+    opacity: 1;
+    transform: scale(1.5) rotate(-180deg);
+  }
+
+  35% {
+    opacity: 1;
+    transform: scale(2) rotate(-360deg);
+  }
+}
+
+/* Additional sparkle effects */
+.giantArrow::before {
+  content: "✨";
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  font-size: 25px;
+  animation: sparkle1 2s ease-in-out infinite;
+}
+
+.giantArrow::after {
+  content: "✨";
+  position: absolute;
+  bottom: -20px;
+  right: -30px;
+  font-size: 25px;
+  animation: sparkle2 2s ease-in-out infinite 1s;
+}
+
+@keyframes sparkle1 {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: scale(1.8) rotate(180deg);
+  }
+}
+
+@keyframes sparkle2 {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: scale(1.8) rotate(-180deg);
+  }
+}
+
+/* Responsive adjustments for the BIG arrow */
+@media (max-width: 768px) {
+  .arrowMessage {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .arrowShaft {
+    width: 16px;
+    height: 60px;
+  }
+
+  .arrowPoint {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 45px solid #ff0000;
+  }
+
+  .urgencyText {
+    font-size: 16px;
+    padding: 10px 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .arrowWrapper::before,
+  .arrowWrapper::after {
+    font-size: 24px;
+    top: -30px;
+  }
+
+  .arrowWrapper::before {
+    left: -40px;
+  }
+
+  .arrowWrapper::after {
+    right: -40px;
+  }
+
+  .giantArrow::before,
+  .giantArrow::after {
+    font-size: 20px;
   }
 }
