@@ -4,6 +4,9 @@ import { Play, Video, Users, Sparkles, Share2, Mail, Clock, Rocket, Star, Zap } 
 import toast from 'react-hot-toast';
 import styles from './TempLanding.module.css';
 
+// Import the RetroTVSlider component
+import RetroTVSlider from './RetroTVSlider';
+
 const TempLanding = () => {
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
@@ -253,38 +256,14 @@ const TempLanding = () => {
               )}
             </div>
 
-            {/* Hero Visual */}
+            {/* Hero Visual - Using the imported RetroTVSlider component */}
             <motion.div
               className={styles.heroVisual}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 1 }}
             >
-              <div className={styles.videoPreview}>
-                <div className={styles.videoFrame}>
-                  <div className={styles.videoPlaceholder}>
-                    <Play size={48} className={styles.playIcon} />
-                  </div>
-                  <div className={styles.videoOverlay}>
-                    <span className={styles.duration}>0:10</span>
-                  </div>
-                </div>
-                <motion.div
-                  className={styles.aiIndicator}
-                  animate={{
-                    scale: [1, 1.05, 1],
-                    opacity: [0.8, 1, 0.8]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <Sparkles size={16} />
-                  AI Enhanced
-                </motion.div>
-              </div>
+              <RetroTVSlider />
             </motion.div>
           </div>
         </div>

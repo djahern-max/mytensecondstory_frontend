@@ -148,7 +148,18 @@
   }
 }
 
+/* FIXED: Changed from grid to flex column to center the TV */
 .heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* Center the text content */
+.heroText {
+  text-align: center;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -206,7 +217,8 @@
   background: #ffff00;
   padding: 15px;
   border: 3px dashed #ff00ff;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 600px;
   animation: wiggle 4s ease-in-out infinite;
 }
 
@@ -230,8 +242,9 @@
 .signupStats {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin: 30px 0;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
 }
 
 .statItem {
@@ -267,7 +280,8 @@
   background: #c0c0c0;
   border: 4px inset #c0c0c0;
   padding: 30px;
-  margin: 30px 0;
+  margin: 30px auto;
+  max-width: 500px;
 }
 
 .formFields {
@@ -284,7 +298,8 @@
   padding: 10px;
   border: 2px inset #c0c0c0;
   background: #ffffff;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   outline: none;
 }
 
@@ -308,7 +323,7 @@
   transition: all 0.2s;
 }
 
-.signupButton:hover {
+.signupButton:hover:not(:disabled) {
   background: linear-gradient(45deg, #ffff00, #ff0000);
   transform: scale(1.1);
 }
@@ -390,6 +405,8 @@
   text-align: center;
   font-family: 'Comic Sans MS', cursive;
   animation: celebration 2s ease-in-out infinite;
+  max-width: 500px;
+  margin: 30px auto;
 }
 
 @keyframes celebration {
@@ -424,100 +441,16 @@
   font-weight: bold;
 }
 
-/* Video preview with 90s styling */
+/* FIXED: Hero Visual now properly centers the TV */
 .heroVisual {
-  margin: 40px 0;
-}
-
-.videoPreview {
-  position: relative;
-  display: inline-block;
-}
-
-.videoFrame {
-  background: #000000;
-  border: 4px outset #c0c0c0;
-  padding: 10px;
-  position: relative;
-}
-
-.videoPlaceholder {
-  width: 320px;
-  height: 240px;
-  background: linear-gradient(45deg, #000080, #800080);
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.videoPlaceholder::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: scanline 3s linear infinite;
+  margin: 2rem 0;
 }
 
-@keyframes scanline {
-  0% {
-    left: -100%;
-  }
-
-  100% {
-    left: 100%;
-  }
-}
-
-.playIcon {
-  color: #00ff00;
-  filter: drop-shadow(0 0 10px #00ff00);
-  animation: iconGlow 2s ease-in-out infinite;
-}
-
-@keyframes iconGlow {
-
-  0%,
-  100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 10px #00ff00);
-  }
-
-  50% {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 20px #00ff00);
-  }
-}
-
-.videoOverlay {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: #ff00ff;
-  color: #ffffff;
-  padding: 5px 10px;
-  font-family: 'Courier New', monospace;
-  border: 1px solid #ffffff;
-}
-
-.aiIndicator {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #ffff00;
-  color: #000000;
-  padding: 5px 10px;
-  border: 2px solid #000000;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-/* Features section */
+/* Features Section */
 .features {
   background: #ffffff;
   border: 4px inset #c0c0c0;
@@ -558,6 +491,8 @@
   font-family: 'Arial', sans-serif;
   color: #000080;
   font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .featuresGrid {
@@ -758,6 +693,11 @@
     font-size: 32px;
   }
 
+  .heroVisual {
+    margin: 2rem auto;
+    width: 100%;
+  }
+
   .countdownContent {
     flex-direction: column;
     gap: 10px;
@@ -773,9 +713,8 @@
     max-width: 280px;
   }
 
-  .videoPlaceholder {
-    width: 250px;
-    height: 188px;
+  .featuresGrid {
+    grid-template-columns: 1fr;
   }
 }
 
