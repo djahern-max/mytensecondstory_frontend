@@ -109,7 +109,7 @@ const RetroTVSlider = () => {
                 <div className={styles.controlPanel}>
                     {/* Slider Label */}
                     <div className={styles.sliderLabel}>
-                        ✨ MINGLE'OMETER: {sliderValue}% ✨
+                        ✨ MINGLE-OMETER: {sliderValue}% ✨
                     </div>
 
                     {/* Custom Slider */}

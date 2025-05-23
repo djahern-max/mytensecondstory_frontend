@@ -205,12 +205,9 @@ const TempLanding = () => {
                 >
                   <div className={styles.arrowWrapper}>
                     <div className={styles.arrowMessage}>
-                      SIGN UP HERE! 🔥
+                      SIGN UP HERE!
                     </div>
-                    <div className={styles.giantArrow}>
-                      <div className={styles.arrowShaft}></div>
-                      <div className={styles.arrowPoint}></div>
-                    </div>
+
                     <div className={styles.urgencyText}>
                       DON'T MISS OUT! ⚡
                     </div>
