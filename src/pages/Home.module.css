@@ -321,30 +321,46 @@
 }
 
 /* Responsive Design */
-@media (max-width: 968px) {
+@media (max-width: 1200px) {
   .heroContent {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
     text-align: center;
   }
-  
+
+  /* Push the phone visual down to avoid button overlap */
+  .heroVisual {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .heroContent {
+    gap: 3rem;
+  }
+
   .heroTitle {
     font-size: 2.5rem;
   }
-  
+
   .videoFrame {
     width: 240px;
     height: 420px;
   }
-  
+
   .featuresGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .useCasesGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  /* Increase margin for medium screens */
+  .heroVisual {
+    margin-top: 1.5rem;
   }
 }
 
@@ -352,40 +368,80 @@
   .hero {
     padding: 4rem 0 6rem;
   }
-  
+
   .heroTitle {
     font-size: 2rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1.125rem;
+    margin-bottom: 2rem;
+    /* Reduced margin */
   }
-  
+
   .heroActions {
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 2rem;
+    /* Add margin to separate from visual */
   }
-  
+
   .videoFrame {
     width: 200px;
     height: 360px;
   }
-  
+
+  /* Ensure proper spacing between content and visual on mobile */
+  .heroContent {
+    gap: 2rem;
+    /* Reduced gap */
+  }
+
   .step {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-  
+
   .stepNumber {
     margin: 0 auto;
   }
-  
+
   .sectionHeader h2 {
     font-size: 2rem;
   }
-  
+
   .ctaContent h2 {
     font-size: 2rem;
+  }
+}
+
+/* Additional fix for very small screens */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 0 4rem;
+  }
+
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .heroActions {
+    margin-bottom: 1.5rem;
+  }
+
+  .videoFrame {
+    width: 180px;
+    height: 320px;
+  }
+
+  .aiIndicator {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
   }
 }
